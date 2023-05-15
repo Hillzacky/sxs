@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkWindow" id="main_window">
+    <property name="can_focus">False</property>
+    <property name="default_width">400</property>
+    <property name="default_height">300</property>
+    <child>
+      <object class="GtkBox" id="main_box">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkGrid" id="input_grid">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="column_spacing">10</property>
+            <property name="row_spacing">10</property>
+            <property name="margin">20</property>
+            <child>
+              <object class="GtkLabel" id="input_file_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Input File:</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="input_file_entry">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="output_urls_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Output URLs:</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow" id="output_urls_scrolled_window">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <child>
+                  <object class="GtkTextView" id="output_urls_textview">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="repeat_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Repeat:</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="repeat_checkbox">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="active">False</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButtonBox" id="button_box">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">start</property>
+            <child>
+              <object class="GtkButton" id="start_button">
+                <property name="label" translatable="yes">Start</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="stop_button">
+                <property name="label" translatable="yes">Stop</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkDialog" id="file_chooser_dialog">
+    <property name="can_focus">False</property>
+    <property name="modal">True</property>
+    <property name="title" translatable="yes">Select Input File</property>
+    <child>
+      <object class="GtkFileChooserDialog" id="file_chooser">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="action">open</property>
+        <property name="select_multiple">False</property>
+        <property name="local_only">True</property>
+        <property name="transient_for">file_chooser_dialog</property>
+      </object>
+    </child>
+  </object>
+</interface>
+
